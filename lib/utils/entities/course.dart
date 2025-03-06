@@ -30,18 +30,28 @@ class Course {
 
   factory Course.fromJson(Map <String, dynamic> json) {
     return Course(
-      name: json["name"],
-      description: json["description"],
-      thumbnail: json["thumbnail"],
-      lessonLength: json["lesson_length"].toString(),
-      videoLength: json["video_length"].toString(),
-      price: json["price"],
-      follow: json["follow"].toString(),
-      id: json["id"].toString(),
-      createdAt: json["created_at"].toString(),
-      updatedAt: json["updated_at"].toString(),
-      downloadableResources: json["downloadable_resources"].toString(),
-      type: json["type"]["title"].toString(),
+      name: json["name"] ?? "-",
+      description: json["description"]  ?? "-",
+      thumbnail: json["thumbnail"] ?? "-",
+      lessonLength: json["lesson_length"] != null
+        ? json["lesson_length"].toString()
+        : "-",
+      videoLength: json["video_length"] != null
+        ? json["video_length"].toString()
+        : "-",
+      price: json["price"] ?? "-",
+      follow: json["follow"] != null
+        ? json["follow"].toString()
+        : "-",
+      id: json["id"] != null 
+        ? json["id"].toString()
+        : "-",
+      createdAt: json["created_at"] ?? "-",
+      updatedAt: json["updated_at"] ?? "-",
+      downloadableResources: json["downloadable_resources"] != null
+        ? json["downloadable_resources"].toString()
+        : "-",
+      type: json["type"]["title"] ?? "-",
     );
   }
 
