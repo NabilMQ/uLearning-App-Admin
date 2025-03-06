@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "name": "ulearning_app_admin",
+  "rewrites": [
+    {"source": "/:a*", "destination": "/"}
+  ]
+}
